@@ -1,0 +1,193 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Estilos para el header y el footer */
+header, footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Estilos para titulos */
+h1, h2 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Hacer que el header esté fijo en la parte superior */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Estilos para los enlaces del nav */
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Estilos generales para las secciones */
+.section {
+    padding: 50px;
+    text-align: center;
+    border-top: 1px solid #fff; /* Agrega un borde superior delgado de color blanco */
+    padding-top: 20px; /* Añade un espacio entre el borde superior y el contenido */
+    margin-top: 70px; /* Añade margen superior para separar del nav */
+}
+
+/* Estilos para las imágenes dentro de las secciones */
+.section img {
+    max-width: 100%;
+}
+
+/* Estilos específicos para la sección del video */
+.video-section {
+    position: relative;
+    margin-top: 150px; /* Ajusta el margen superior */
+}
+.video-section iframe {
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Estilos específicos para la sección de la historia */
+.story-section {
+    background: url('https://i.pinimg.com/originals/f2/6c/dc/f26cdcc710944fa791c876d3acc3fade.jpg') center/cover no-repeat;
+    position: relative;
+    color: #fff;
+    padding: 100px 20px;
+}
+.story-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.story-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilos para el carrusel de personajes */
+#characters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+.carousel img {
+    width: 500px;  /* Establece el ancho fijo */
+    height: 500px; /* Establece el alto fijo */
+    margin: 0 10px;
+    object-fit: cover; /* Asegura que la imagen cubra completamente el área de 500x500 píxeles */
+    border: 1px solid red; /* Añade un borde rojo para visualización */
+}
+
+/* Estilos para las imágenes de los niveles */
+.level-section img {
+    width: 150px;   /* Establece el ancho fijo */
+    height: 150px;  /* Establece el alto fijo */
+    object-fit: cover;  /* Asegura que la imagen cubra completamente el área de 150x150 píxeles */
+    transition: transform 0.3s ease;  /* Añade una transición suave */
+    margin: 0 10px; /* Añade margen de 10px entre las imágenes */
+    border: 1px solid red; /* Añade un borde rojo para visualización */
+}
+.level-section img:hover {
+    transform: scale(3);  /* Escala la imagen al pasar el ratón */
+}
+
+/* Estilos para la sección de mecánicas */
+.gif-style {
+    max-width: 100%;
+    width: 300px; /* Ajusta el tamaño según sea necesario */
+}
+.mechanics-list img {
+    width: 250px;   /* Establece el ancho fijo */
+    height: 250px;  /* Establece el alto fijo */
+    object-fit: cover;  /* Asegura que la imagen cubra completamente el área de 50x50 píxeles */
+    transition: transform 0.3s ease;  /* Añade una transición suave */
+    margin: 0 10px; /* Añade margen de 10px entre las imágenes */
+    border: 1px solid red; /* Añade un borde rojo para visualización */
+}
+.mechanics-list img:hover {
+    transform: scale(2);  /* Escala la imagen al pasar el ratón */
+}
+
+/* Estilos para la sección de galería */
+.ruleta {
+    margin-top: 200px; /* Ajusta el margen superior para centrar la galería verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tarjetas {
+    width: 190px;
+    height: 210px;
+    margin: 0 auto; /* Centra la galería horizontalmente */
+    perspective: 800px;
+}
+.tarjetas__contenido {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(-182px) rotateY(0);
+    animation: carrusel 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225) forwards;
+}
+.tarjetas__elemento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 190px;
+    height: 210px;
+    border-radius: 6px;
+}
+.tarjetas__elemento img {
+    width: 100%;
+    height: 100%;
+}
+.tarjetas__elemento:nth-child(1) {
+    transform: rotateY(0) translateZ(182px);
+}
+.tarjetas__elemento:nth-child(2) {
+    transform: rotateY(120deg) translateZ(182px);
+}
+.tarjetas__elemento:nth-child(3) {
+    transform: rotateY(240deg) translateZ(182px);
+}
+
+@keyframes carrusel {
+    0%, 17.5% {
+        transform: translateZ(-182px) rotateY(0);
+    }
+    27.5%, 45% {
+        transform: translateZ(-182px) rotateY(-120deg);
+    }
+    55%, 72.5% {
+        transform: translateZ(-182px) rotateY(-240deg);
+    }
+    82.5%, 100% {
+        transform: translateZ(-182px) rotateY(-360deg);
+    }
+}

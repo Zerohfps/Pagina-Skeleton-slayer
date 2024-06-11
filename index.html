@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton Slayer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS externo -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#story">Historia</a>
+            <a href="#characters">Personajes</a>
+            <a href="#levels">Niveles</a>
+            <a href="#mechanics">Mecánicas</a>
+        </nav>
+    </header>
+
+    <!-- Sección de galería de imágenes -->
+    <div id="galeria" class="ruleta">
+        <figure class="tarjetas">
+            <div class="tarjetas__contenido">
+                <div class="tarjetas__elemento">
+                    <img src="Imagenes juego/Menu con los botones.jpg">
+                </div>
+                <div class="tarjetas__elemento">
+                    <img src="Imagenes juego/Galeria 2.png">
+                </div>
+                <div class="tarjetas__elemento">
+                    <img src="Imagenes juego/win.jpg">
+                </div>
+            </div>
+        </figure>
+    </div>
+
+    <!-- Sección principal con el video -->
+    <div id="home" class="section video-section">
+        <h1>Skeleton Slayer</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PlwMqaUKejw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <!-- Sección de la historia del juego -->
+    <div id="story" class="section story-section">
+        <div class="story-content">
+            <h1>Historia</h1>
+            <p>En un mundo sumido en sombras, Shiro, una guerrera de espíritu indomable, se encuentra atrapada en una mazmorra infestada de esqueletos revividos. Armada únicamente con un escudo legendario, Shiro debe abrirse paso a través de las hordas de enemigos óseos para hallar la salida y salvar a su pueblo de una antigua maldición. Cada esqueleto derrotado con su escudo fortalece su resolución, mientras se adentra más en la mazmorra, consciente de que su supervivencia y la esperanza de su gente dependen de su victoria. ¿Podrá Shiro usar su escudo para vencer a la oscuridad y liberar a su pueblo de su trágico destino?</p>
+        </div>
+    </div>
+
+    <!-- Sección de personajes con carrusel de imágenes -->
+    <div id="characters" class="section">
+        <h1>Personajes</h1>
+        <div class="carousel">
+            <div>
+                <img src="Imagenes juego/menu de juego sin botones.jpg" alt="Personaje 1">
+                <p>Shiro</p>
+            </div>
+            <div>
+                <img src="Imagenes juego/Galeria 2.png">
+                <p>Jefe final</p>
+            </div>
+            <div>
+                <img src="Imagenes juego/enemigos nvel 1.jpg">
+                <p>Subditos</p>
+            </div>
+            <!-- Añadir más personajes según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Sección de niveles con imágenes que se agrandan al pasar el ratón -->
+    <div id="levels" class="section level-section">
+        <h1>Niveles</h1>
+        <img src="Imagenes juego/nivel 1.jpg" alt="Nivel 1">
+        <img src="Imagenes juego/nivel 2.jpg" alt="Nivel 2">
+    </div>
+
+    <!-- Sección de mecánicas con lista de imágenes y descripción dinámica -->
+    <div id="mechanics" class="section mechanics-section">
+        <h1>Mecánicas</h1>
+        <div class="mechanics-list">
+            <img src="Imagenes juego/ataque.jpeg" alt="Mecánica 1" class="gif-style" onclick="showDescription('description1')">
+            <img src="Imagenes juego/vida.jpeg" alt="Mecánica 2" class="gif-style" onclick="showDescription('description2')">
+            <!-- Añadir más mecánicas según sea necesario -->
+        </div>
+        <div id="description1" class="mechanics-description">
+            <h3>Ataque y Vida</h3>
+            <p>Tu principal habilidad es el ataque básico, ejecutado con un clic izquierdo. En cada nivel, te enfrentas a hordas de esqueletos, pero cuentas con vidas adicionales para resistir en las duras batallas.
+            </p>
+        </div>
+        <div id="description2" class="mechanics-description" style="display:none;">
+            <h4>Esquiva a tus enemigos</h4>
+            <p>Esquiva los ataques lo mejor que puedas</p>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="#cookies">Cookies</a> | <a href="#policies">Políticas</a> | <a href="#about">Nosotros</a></p>
+    </footer>
+
+    <script>
+        // Función para mostrar la descripción correspondiente al hacer clic en una imagen de mecánica
+        function showDescription(id) {
+            document.querySelectorAll('.mechanics-description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
